@@ -1,0 +1,27 @@
+<p>search-account works!</p>
+<!-- search-account.component.html -->
+<div class="container">
+  <h2>Search Account by Name</h2>
+  
+  <input [(ngModel)]="name" placeholder="Enter name" />
+  <button (click)="search()">Search</button>
+
+  <table *ngIf="accounts.length > 0" border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accounts">
+        <td>{{ account.id }}</td>
+        <td>{{ account.name }}</td>
+        <td>{{ account.balance }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="accounts.length === 0">No records found</p>
+</div>
